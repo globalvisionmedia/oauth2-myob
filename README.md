@@ -22,7 +22,7 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
 
 
 # Instantiation
-    $provider = new \GlobalVisionMedia\OAuth2\Client\Provider\MYOB([
+    $provider = new \GlobalVisionMedia\OAuth2\MYOBClient\Provider\MYOB([
         'clientId'                => 'yourId',          // The Key assigned to you by MYOB
         'clientSecret'            => 'yourSecret',      // The Secret assigned to you by MYOB
         'redirectUri'             => 'yourRedirectUri'  // The Redirect Uri you specified for your app on MYOB
@@ -49,7 +49,7 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
     $options=['debug' => $debug, 'exceptions' => false, 'handler' => $stack];
     $httpClient = new Client($options);
 
-    $this->provider = \GlobalVisionMedia\OAuth2\Client\Provider\MYOB([
+    $this->provider = \GlobalVisionMedia\OAuth2\MYOBClient\Provider\MYOB([
         'redirectUri'       => CALLBACK_URI,
         'clientId'          => MYOB_CLIENT_ID,
         'clientSecret'      => MYOB_CLIENT_SECRET,
@@ -91,7 +91,7 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
         $options=['debug' => $debug, 'exceptions' => false, 'handler' => $stack];
         $httpClient = new Client($options);
   
-        $this->provider = \GlobalVisionMedia\OAuth2\Client\Provider\MYOB([
+        $this->provider = \GlobalVisionMedia\OAuth2\MYOBClient\Provider\MYOB([
             'redirectUri'       => CALLBACK_URI,
             'clientId'          => MYOB_CLIENT_ID,
             'clientSecret'      => MYOB_CLIENT_SECRET,
