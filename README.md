@@ -17,10 +17,8 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
 
 2. MYOB's APIs are throttled but the documented limit is 8 calls per second (and a large number per day) appears wrong. The throttling appears to be buggy and you will likely find that you receive API Access Limit Exceeded errors no matter what limits you impose unfortunately. However you will be able to create an applicaiton that works fairly reliably if you follow the guidelines under Sample Application (below)
 
-4. an additional optional parameter 'debug' has been included. It will write curl devug information to a file on the server
 
-
-# Authorisation Code Flow
+# Instantiation
     $provider = new \GlobalVisionMedia\OAuth2\Client\Provider\MYOB([
         'clientId'                => 'yourId',          // The Key assigned to you by MYOB
         'clientSecret'            => 'yourSecret',      // The Secret assigned to you by MYOB
@@ -55,7 +53,7 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
     public function __construct($debug=false) {
       $this->cache=CACHEDIR.'_API_TOKEN_CACHE_'.md5(__FILE__.get_class($this));
 
-      // Add our rate limiter
+      // Add the rate limiter
       $stack=HandlerStack::create();
       $stack->push(RateLimiterMiddleware::perSecond($this->getPerSecondRateLimit()));
       $options=['debug' => $debug, 'exceptions' => false, 'handler' => $stack];
