@@ -13,7 +13,7 @@ This package provides MYOB OAuth 2.0 support for the PHP League's OAuth 2.0 Clie
 # Usage
 Usage is the same as The League's OAuth client, using \GlobalVisionMedia\OAuth2\MYOBClient\Provider\MYOB as the provider, except for the following:
 
-1. MYOB does not rely exclusively on OAUth2 to log you in. OAUth2 is used to provide access to the APIs but not to your MYOB data file. This requires a second login which returns a "Company URL". This provider handles both logins but requires you to provide your MYOB login details in addition to the standard OAUth2 credentials. (see Authorisation Code Flow, below)
+1. MYOB does not rely exclusively on OAuth2 to log you in. OAUth2 is used to provide access to the APIs but not to your MYOB data file. This requires a second login which returns a "Company URL". This provider handles both logins but requires you to provide your MYOB login details in addition to the standard OAUth2 credentials. (see Authorisation Code Flow, below)
 
 2. MYOB's APIs are throttled - the documented limit is 8 calls per second (and a large number per day) but the throttling appears to be buggy and you will likely find that you receive API Access Limit Exceeded errors no matter what limits you impose unfortunately. However you will be able to create an application that works fairly reliably if you follow the guidelines under Sample Application (below) qnd add a failsafe that detects the throttling, pauses and retries.
 
