@@ -28,7 +28,9 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
         'companyName'             => 'yourCompany'      // The name of your company file. This appears in the "Welcome" screen when you log into MYOB
     ]);
     
-    You can also pass a second parameter containing a collaborator for your httpClient (see sample application for an example). Doing that means you can define your own Guzzle client and do things such as:
+# Tip (also applies to other providers)
+    You can also pass a second parameter containing a collaborator for your httpClient (see sample application for an example).
+    Doing that means you can define your own Guzzle client and do things such as:
     
       1. Setting Guzzle into debug mode, or
       2. Adding a rate limiter.
