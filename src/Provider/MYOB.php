@@ -1,6 +1,6 @@
 <?php
 
-namespace GlobalVisionMedia\OAuth2\Client\Provider;
+namespace GlobalVisionMedia\OAuth2\MYOBClient\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
