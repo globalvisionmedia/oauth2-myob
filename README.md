@@ -148,7 +148,6 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
   
     }
   
-  
-  session_start();
-  $myob=new myMYOB();
-  print_r($myob->fetchAll('GET', '/GeneralLedger/Job'));
+    session_start();
+    $myob=new myMYOB();
+    print_r($myob->fetchAll('GET', '/GeneralLedger/Job'));
