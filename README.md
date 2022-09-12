@@ -6,7 +6,7 @@ composer require globalvisionmedia/oauth2-myob
 
 # Obtaining an MYOB access key
 1. To get a key you will need to be part of the MYOB Developer Program (https://developer.myob.com/program/become-a-myob-developer-partner/)
-2. After you obtian an account, log in and click the "Developer" tab of my.myob.com.au
+2. After you obtain an account, log in and click the "Developer" tab of my.myob.com.au
 3. Click the Register App button to create a key
 4. The redirect API must be exactly the same (including the http:// or https://) as the redirectUri below and is the URL of your application
 
