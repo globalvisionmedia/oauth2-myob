@@ -2,7 +2,7 @@
 This package provides MYOB OAuth 2.0 support for the PHP League's OAuth 2.0 Client.
 
 # Installation
-composer require globalvisionmedia/oauth2-myob
+    composer require globalvisionmedia/oauth2-myob
 
 # Obtaining an MYOB access key
 1. To get a key you will need to be part of the MYOB Developer Program (https://developer.myob.com/program/become-a-myob-developer-partner/)
