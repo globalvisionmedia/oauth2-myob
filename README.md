@@ -1,7 +1,8 @@
 # MYOB Provider for OAuth 2.0 Client
 This package provides MYOB OAuth 2.0 support for the PHP League's OAuth 2.0 Client.
 
-Author: Peter Hawkins (phawkins@gvmedia.com.au)
+Author: Peter Hawkins (phawkins@gvmedia.com.au) 
+Date:   12th September 2022
 
 # Installation
     composer require globalvisionmedia/oauth2-myob
