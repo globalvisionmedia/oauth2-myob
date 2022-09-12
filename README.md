@@ -14,7 +14,7 @@ Date:   12th September 2022
 4. The redirect API must be exactly the same (including the http:// or https://) as the redirectUri below and is the URL of your application
 
 # Usage
-Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\Provider\MYOB as the provider, except for the following:
+Usage is the same as The League's OAuth client, using \GlobalVisionMedia\OAuth2\MYOBClient\Provider\MYOB as the provider, except for the following:
 
 1. MYOB does not rely exclusively on OAUth2 to log you in. OAUth2 is used to provide access to the APIs but not to your MYOB data file. This requires a second login which returns a "Company URL". This provider handles both logins but requires you to provide your MYOB login details in addition to the standard OAUth2 credentials. (see Authorisation Code Flow, below)
 
