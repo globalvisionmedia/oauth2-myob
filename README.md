@@ -32,11 +32,32 @@ Usage is the same as The League's OAuth client, using \HelpScout\OAuth2\Client\P
     ]);
     
 # Tip (also applies to other providers)
-    When you instantiate your provider, you can also pass a second parameter containing a collaborator for your httpClient (see sample application for an example).
+    When you instantiate your provider, you can also pass a second parameter containing a collaborator for your httpClient.
     Doing that means you can define your own Guzzle client and do things such as:
     
       1. Setting Guzzle into debug mode, or
-      2. Adding a rate limiter.
+      2. Adding a rate limiter mildeware (composer require spatie/guzzle-rate-limiter-middleware)
+      
+    
+    use GuzzleHttp\Client;
+    use GuzzleHttp\HandlerStack;
+    use Spatie\GuzzleRateLimiterMiddleware\RateLimiterMiddleware;
+
+    // Add a rate limiter
+    $stack=HandlerStack::create();
+    $stack->push(RateLimiterMiddleware::perSecond($this->getPerSecondRateLimit()));
+    $options=['debug' => $debug, 'exceptions' => false, 'handler' => $stack];
+    $httpClient = new Client($options);
+
+    $this->provider = \GlobalVisionMedia\OAuth2\Client\Provider\MYOB([
+        'redirectUri'       => CALLBACK_URI,
+        'clientId'          => MYOB_CLIENT_ID,
+        'clientSecret'      => MYOB_CLIENT_SECRET,
+        'username'          => MYOB_USERNAME,
+        'password'          => MYOB_PASSWORD,
+        'companyName'       => MYOB_COMPANY_NAME
+      ],
+      ['httpClient'         => $httpClient]);
 
 # Sample application
     <?php
