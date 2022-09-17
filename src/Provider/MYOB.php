@@ -110,12 +110,6 @@ class MYOB extends AbstractProvider {
     return new MYOBResourceOwner($response);
   }
 
-  // you can call this and retry a connection in the event you receive an Access denied response
-  protected function resendcftoken() {
-    $this->cftokenSent=true;
-  }
-
-
   /**
    * Returns the default headers used by this provider.
    *
@@ -125,6 +119,7 @@ class MYOB extends AbstractProvider {
     $headers = ['x-myobapi-version' => 'v2',
                  'x-myobapi-key' => $this->clientId ];
     if (!($this->cftokenSent)) $headers['x-myobapi-cftoken'] = $this->cftoken;
+    $this->cftokenSent=true;
     return $headers;
   }
 	  
@@ -144,7 +139,6 @@ class MYOB extends AbstractProvider {
     sleep(3);
     $request = parent::getAuthenticatedRequest('GET', 'https://api.myob.com/accountright/', $token);
     $companies = $this->getParsedResponse($request);
-    $this->cftokenSent=true;
 
     foreach ($companies as $company) {
       if ($company['Name'] == $this->companyName) return $company['Uri'];
