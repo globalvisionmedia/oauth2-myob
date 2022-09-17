@@ -110,6 +110,11 @@ class MYOB extends AbstractProvider {
     return new MYOBResourceOwner($response);
   }
 
+  // you can call this and retry a connection in the event you receive an Access denied response
+  protected function resendcftoken() {
+    $this->cftokenSent=true;
+  }
+
 
   /**
    * Returns the default headers used by this provider.
